@@ -10,10 +10,21 @@ export const useApi = () => {
     setError(null);
     
     try {
+      // Determinar la URL base según el entorno
+      const baseURL = process.env.NODE_ENV === 'production' 
+        ? 'https://chatbot-crm.zxt.cl'
+        : 'http://localhost:8000';
+      
+      // Construir la URL completa
+      const fullUrl = url.startsWith('/') ? `${baseURL}${url}` : `${baseURL}/${url}`;
+      
       const config = {
         method,
-        url,
-        headers: {}
+        url: fullUrl,
+        headers: {
+          'Content-Type': 'application/json',
+          'Accept': 'application/json'
+        }
       };
 
       if (token) {
