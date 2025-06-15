@@ -2,7 +2,7 @@
 import axios from 'axios';
 
 // Configuración base de la API
-export const API_BASE_URL = process.env.REACT_APP_API_URL || 'http://localhost:8000/api';
+export const API_BASE_URL = process.env.REACT_APP_API_URL || 'https://chatbot-crm.zxt.cl/';
 
 // Crear instancia de axios
 const api = axios.create({
