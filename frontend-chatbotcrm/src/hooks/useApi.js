@@ -36,7 +36,7 @@ export const useApi = () => {
       }
 
       const response = await api(config);
-      return response.data;
+      return response.data;C
     } catch (err) {
       setError(err.response?.data?.message || err.message);
       throw err;
