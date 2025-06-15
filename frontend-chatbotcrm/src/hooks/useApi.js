@@ -47,3 +47,4 @@ export const useApi = () => {
 
   return { apiCall, loading, error };
 };
+
