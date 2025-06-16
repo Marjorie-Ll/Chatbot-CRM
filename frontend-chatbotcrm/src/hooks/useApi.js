@@ -10,10 +10,11 @@ export const useApi = () => {
     setError(null);
     
     try {
+      const API_BASE_URL = "DEMO_MODE";
       // Determinar la URL base según el entorno
-      const baseURL = process.env.NODE_ENV === 'production' 
-        ? 'https://chatbot-crm.zxt.cl'
-        : 'http://localhost:8000';
+      //const baseURL = process.env.NODE_ENV === 'production' 
+        //? 'https://chatbot-crm.zxt.cl'
+        //: 'http://localhost:8000';
       
       // Construir la URL completa
       const fullUrl = url.startsWith('/') ? `${baseURL}${url}` : `${baseURL}/${url}`;
