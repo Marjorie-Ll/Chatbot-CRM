@@ -1,4 +1,6 @@
 {
+  "buildCommand": "cd frontend-chatbotcrm && npm run build",
+  "outputDirectory": "frontend-chatbotcrm/build",
   "rewrites": [
     {
       "source": "/(.*)",
