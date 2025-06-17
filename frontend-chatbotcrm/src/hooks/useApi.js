@@ -10,13 +10,10 @@ export const useApi = () => {
     setError(null);
     
     try {
-      const API_BASE_URL = "DEMO_MODE";
       // Determinar la URL base según el entorno
-      //const baseURL = process.env.NODE_ENV === 'production' 
-        //? 'https://chatbot-crm.zxt.cl'
-        //: 'http://localhost:8000';
+      const API_URL = process.env.REACT_APP_API_URL || 'http://localhost:8000/api';
       
-      // Construir la URL completa
+      //bConstruir la URL completa
       const fullUrl = url.startsWith('/') ? `${baseURL}${url}` : `${baseURL}/${url}`;
       
       const config = {
@@ -37,7 +34,7 @@ export const useApi = () => {
       }
 
       const response = await api(config);
-      return response.data;C
+      return response.data;
     } catch (err) {
       setError(err.response?.data?.message || err.message);
       throw err;
