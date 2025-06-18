@@ -11,21 +11,8 @@ export const useAuth = () => {
 
   // Login
   //DEMO 
-  const login = async (email, password) => {
-  // Simular login exitoso
-  const fakeUser = { name: "Usuario Demo", email: email };
-  const fakeToken = "demo-token-123";
-  
-  setUser(fakeUser);
-  setToken(fakeToken);
-  localStorage.setItem("auth_token", fakeToken);
-  localStorage.setItem("auth_user", JSON.stringify(fakeUser));
-  
-  return { success: true, user: fakeUser };
-};
 
-
-  /* const login = useCallback(async (email, password) => {
+  const login = useCallback(async (email, password) => {
     setLoading(true);
     setError(null);
     
@@ -47,7 +34,7 @@ export const useAuth = () => {
     } finally {
       setLoading(false);
     }
-  }, [apiCall]); */
+  }, [apiCall]); 
 
   // Register
   const register = useCallback(async (name, email, password, password_confirmation) => {
